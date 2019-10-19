@@ -1,0 +1,89 @@
+<html>
+<head>
+
+	<title>Vue JS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+	
+	
+<body>	
+
+
+  <div background ='green' id ='app'>
+  	Select Branch:
+  	<select v-model='selected_branch'>
+  		<option v-for="branch in branches" :value="branch">{{branch.name}}</option>
+
+  	</select>
+  	<br>
+  	<br>
+  	<label>Select Movie</label>
+  	<select>
+  		
+  		<option v-for="movie in selected_branch.movies" :value="movie.name">{{movie.name}}</option>
+
+  	</select>
+  
+  </div>
+  
+</form>
+</body>
+
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			selected_branch:' ',
+			
+		branches:[ 
+  {name:'Cinema Baguio',
+ 		 movies:[ 
+			 {name:'THE JOKER'}, 
+			 {name:'INTERSTELLAR'},
+			 {name:'SHAWSHACK REDEMPTION'},
+			 {name:'PULP FICTION'},
+			 {name:'FIGHT CLUB'}
+  		]
+  },
+
+  {name:'Thor Cinema ',
+ 		 movies:[ 
+			 {name:'Thor 1'}, 
+			 {name:'Thor 2'}, 
+			 {name:'Thor 3 '},
+			 {name:'Thor 4 '}	 
+  		]
+  },
+  {name:'Marvy Cinema',
+ 		 movies:[ 
+			 {name:'Marvy 1'}, 
+			 {name:'Marvy 2'}, 
+			 {name:'Marvy 3 '}, 
+			 {name:'Marvy 4 '}	 
+  		]
+  },
+  {name:'Edrylle Cinema',
+ 		 movies:[ 
+			 {name:'Edrylle 1'}, 
+			 {name:'Edrylle 2'}, 
+			 {name:'Edrylle 3'}, 
+			 {name:'Edrylle 4'}
+  		]
+  },
+  {name:'Jp Cinema',
+ 		 movies:[ 
+			 {name:'Jp 1 '},
+			 {name:'Jp 2'}, 
+			 {name:'Jp 3'}, 
+			 {name:'Jp 4'}
+  		]
+  }
+  ]
+  }	
+	})
+
+</script>
+
+
+</html>
